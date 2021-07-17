@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StatisticsCardTitle from '../StatisticsCardTitle/StatisticsCardTitle';
+import Section from '../StatisticsCardTitle/StatisticsCardTitle';
 import { StatisticsCardContainer } from './StatisticsCard.styles';
 
 export default class StatisticsCard extends Component {
@@ -12,7 +12,7 @@ export default class StatisticsCard extends Component {
   render() {
     return (
       <StatisticsCardContainer>
-        <StatisticsCardTitle />;
+        <Section title={'Please leave feedback'}></Section>;
       </StatisticsCardContainer>
     );
   }

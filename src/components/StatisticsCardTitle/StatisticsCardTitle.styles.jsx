@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const StatisticsCardTitleH1 = styled.h1`
+export const SectionContent = styled.section`
   font-style: normal;
   font-weight: bold;
   font-size: 35px;

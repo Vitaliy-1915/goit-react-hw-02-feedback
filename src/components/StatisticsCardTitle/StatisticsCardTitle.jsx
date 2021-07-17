@@ -1,8 +1,8 @@
 import React from 'react';
-import { StatisticsCardTitleH1 } from './StatisticsCardTitle.styles';
+import { SectionContent } from './StatisticsCardTitle.styles';
 
-function StatisticsCardTitle() {
-  return <StatisticsCardTitleH1>Please leave feedback</StatisticsCardTitleH1>;
+function Section({ title }) {
+  return <SectionContent>{title} </SectionContent>;
 }
 
-export default StatisticsCardTitle;
+export default Section;

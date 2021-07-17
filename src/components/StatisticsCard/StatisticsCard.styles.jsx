@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const StatisticsCardContainer = styled.section`
+export const StatisticsCardContainer = styled.div`
   margin: 30px auto;
   width: 700px;
   height: 700px;
