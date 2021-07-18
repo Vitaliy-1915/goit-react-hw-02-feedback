@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 
-export const StatisticsCardContainer = styled.div`
-  margin: 30px auto;
-  width: 700px;
-  height: 700px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  background-color: #ffffff8b;
+export const StatisticCardContent = styled.section`
+  /* font-style: normal;
+  font-weight: bold;
+  font-size: 35px; */
+  padding: 30px;
+  margin: 0;
+  background-color: rgb(243, 242, 242);
+  /* border-bottom: solid 1px; */
 `;
