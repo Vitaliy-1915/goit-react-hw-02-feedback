@@ -5,3 +5,9 @@ export const StatisticsList = styled.ul`
   width: 600px;
   height: 200px;
 `;
+
+export const StatisticsListItem = styled.li`
+  text-align: start;
+  list-style: none;
+  padding: 10px;
+`;

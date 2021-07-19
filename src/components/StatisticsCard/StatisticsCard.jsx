@@ -1,38 +1,75 @@
-import React from 'react';
+import React, { Component } from 'react';
 import StatisticCardTitle from '../StatisticCardTitle/StatisticCardTitle';
 import StatisticsSection from '../StatisticsSection/StatisticsSection';
-import FeedbackOptions from '../Button/Button';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
 import { StatisticCardContent } from './StatisticsCard.styles';
 
-function StatisticCard() {
-  return (
-    <StatisticsSection>
-      <StatisticCardContent>
-        <StatisticCardTitle title="Please leave feedback" />
+export default class StatisticCard extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
 
-        <FeedbackOptions options={'Good'} />
-        <FeedbackOptions options={'Neutral'} />
-        <FeedbackOptions options={'Bad'} />
+  handleIncrement = () => {
+    this.setState(prevState => ({
+      good: prevState.good + 1,
+    }));
+  };
 
-        <StatisticCardTitle title="Statistics" />
+  render() {
+    const { good, neutral, bad } = this.state;
+    return (
+      <StatisticsSection>
+        <StatisticCardContent>
+          <StatisticCardTitle title="Please leave feedback" />
 
-        <Statistics></Statistics>
+          <FeedbackOptions
+            text={'Good'}
+            onLeaveFeedback={this.handleIncrement}
+          ></FeedbackOptions>
+          <FeedbackOptions
+            text={'Neutral'}
+            onLeaveFeedback={this.handleIncrement}
+          />
+          <FeedbackOptions
+            text={'Bad'}
+            onLeaveFeedback={this.handleIncrement}
+          />
 
-        {/* // <ul>
-    //   <li></li>
-    //   <li></li>
-    //   <li></li>
-    //   <li></li>
-    //   <li></li>
-    // </ul> */}
-      </StatisticCardContent>
-    </StatisticsSection>
-  );
+          <StatisticCardTitle title="Statistics" />
+
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            // total={total}
+            // positivePercentage={positivePercentage}
+          />
+        </StatisticCardContent>
+      </StatisticsSection>
+    );
+  }
 }
 
-export default StatisticCard;
+// function StatisticCard() {
+//   return (
+//     <StatisticsSection>
+//       <StatisticCardContent>
+//         <StatisticCardTitle title="Please leave feedback" />
 
-// StatisticCard.propTypes = {
-//   children: PropTypes.node.isRequired,
-// };
+//         <FeedbackOptions options={'Good'} />
+//         <FeedbackOptions options={'Neutral'} />
+//         <FeedbackOptions options={'Bad'} />
+
+//         <StatisticCardTitle title="Statistics" />
+
+//         <Statistics></Statistics>
+
+//       </StatisticCardContent>
+//     </StatisticsSection>
+//   );
+// }
+
+// export default StatisticCard;
